@@ -4,6 +4,8 @@ a simple rating plugin with pure CSS implement
 
 
 ### Usage
+see [DEMO](http://jayin.github.io/jquery-rating/demo.html)
+
 ```html
 <!-- div group -->
 <div >
