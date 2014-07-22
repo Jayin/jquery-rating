@@ -1,8 +1,5 @@
 (function($) {
 
-	var defaults = {
-		id: 18
-	}
 	$.rating = {
 		max_item: 0,
 		currentRating: 0,
