@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Demo</title>
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="jquery-rating.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-rating.css">
+</head>
+<body>
+<!-- div group -->
+<div >
+
+	<div id="1" class="ratenode nomal"></div>
+	<div id="2" class="ratenode nomal "></div>
+	<div id="3" class="ratenode nomal "></div>
+	<div id="4" class="ratenode nomal "></div>
+	<div id="5" class="ratenode nomal "></div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+	console.log($.rating);
+	$.rating.init(function(cur){
+		console.log("current is -->"+cur);
+	});
+
+	function out(){
+		console.log("current is -->"+$.rating.getCurrentRating());
+	}
+
+	setInterval("out()",1000);
+
+</script>
+
+</html>
