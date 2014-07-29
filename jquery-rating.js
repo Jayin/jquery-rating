@@ -1,11 +1,26 @@
-$.fn.start = function(cb) {
+$.fn.start = function(rating,cb) {
     var length = $(this).children().length;
     var children = $(this).children();
+    //current index ,0 base
+    var current = -1;
+    console.log(rating);
 
+    if(typeof(rating) === 'function'){
+        cb = rating;
+    }else{
+        if(rating <1 || rating > length){
+            rating = -1;
+        }
+    }
+    //init rating
+    current = rating - 1;
+    for (var j = 0; j <= current; j++) {
+        $(children[j]).removeClass('nomal rating').addClass('rating');
+    }
     for (var i = 0; i < length; i++) {
 
         $(children[i]).bind('mouseover', function(event) {
-            var current = $(this).index(children[i]);
+            current = $(this).index(children[i]);
 
             for (var j = 0; j <= current; j++) {
                 $(children[j]).removeClass('nomal rating').addClass('rating');
