@@ -32,6 +32,12 @@ $('.group1').start(function(cur){
          $('#info').text(cur);
 });
 
+//or with init rating
+$('.group1').start(2,function(cur){
+        console.log(cur);
+         $('#info').text(cur);
+});
+
 
 //when you want to get the current rating
 $('.group1').getCurrentRating()
