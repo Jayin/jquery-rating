@@ -7,27 +7,32 @@ a simple rating plugin with pure CSS implement
 see [DEMO](http://jayin.github.io/jquery-rating/demo.html)
 
 ```html
+
 <!-- div group -->
-<div >
-	<!-- with order number -->
-	<div id="1" class="ratenode nomal"></div>
-	<div id="2" class="ratenode nomal "></div>
-	<div id="3" class="ratenode nomal "></div>
-	<div id="4" class="ratenode nomal "></div>
-	<div id="5" class="ratenode nomal "></div>
-</div>
+    <div class="group1">
+        <!-- rattings-->
+        <div   class="ratenode nomal"></div>
+        <div   class="ratenode nomal "></div>
+        <div   class="ratenode nomal "></div>
+        <div   class="ratenode nomal "></div>
+        <div   class="ratenode nomal "></div>
+    </div>
+    <div >
+        <p id="info" >0</p>
+    </div>
 ```
 
 ```javascript
-//init
-$.rating.init();
+//start it
+$('.group1').start();
 
-//or with a callback onChange Callback
-$.rating.init(function(cur){
-	console.log("current is -->"+cur);
+//or with a callback 
+$('.group1').start(function(cur){
+        console.log(cur);
+         $('#info').text(cur);
 });
 
 
 //when you want to get the current rating
-$.rating.getCurrentRating()
+$('.group1').getCurrentRating()
 ```

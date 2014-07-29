@@ -6,29 +6,47 @@
 	<link rel="stylesheet" type="text/css" href="jquery-rating.css">
 </head>
 <body>
-<!-- div group -->
-<div >
+	<!-- div group -->
+	<div class="group1">
 
-	<div id="1" class="ratenode nomal"></div>
-	<div id="2" class="ratenode nomal "></div>
-	<div id="3" class="ratenode nomal "></div>
-	<div id="4" class="ratenode nomal "></div>
-	<div id="5" class="ratenode nomal "></div>
-</div>
+		<div   class="ratenode nomal"></div>
+		<div   class="ratenode nomal "></div>
+		<div   class="ratenode nomal "></div>
+		<div   class="ratenode nomal "></div>
+		<div   class="ratenode nomal "></div>
+	</div>
+	<div >
+		<p id="info" >0</p>
+	</div>
+
+	<div class="group2">
+		<div class="ratenode nomal"></div>
+		<div class="ratenode nomal "></div>
+		<div class="ratenode nomal "></div>
+		<div class="ratenode nomal "></div>
+		<div class="ratenode nomal "></div>
+	</div>
+	<div >
+		<p id="info2" >0</p>
+	</div>
+	<input id="see" type="button" value="getCurrentRating">
 
 
 </body>
 <script type="text/javascript">
-	console.log($.rating);
-	$.rating.init(function(cur){
-		console.log("current is -->"+cur);
+	$('.group1').start(function(cur){
+		console.log(cur);
+		 $('#info').text(cur);
 	});
 
-	function out(){
-		console.log("current is -->"+$.rating.getCurrentRating());
-	}
+	$('.group2').start(function(cur){
+	   console.log(cur);
+	   $('#info2').text(cur);
+	});
 
-	setInterval("out()",1000);
+	$("#see").on('click',function(){
+		alert($('.group1').getCurrentRating() + "--" + $('.group2').getCurrentRating());
+	});
 
 </script>
 
