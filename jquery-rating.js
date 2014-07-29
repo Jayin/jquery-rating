@@ -1,47 +1,38 @@
-(function($) {
+$.fn.start = function(cb) {
+    var length = $(this).children().length;
+    var children = $(this).children();
 
-	var defaults = {
-		id: 18
-	}
-	$.rating = {
-		max_item: 0,
-		currentRating: 0,
-		init: function(onChange) {
-			$(document).ready(function() {
-				console.log("rating..init...");
+    for (var i = 0; i < length; i++) {
 
-				max_item = $('.ratenode').length;
+        $(children[i]).bind('mouseover', function(event) {
+            var current = $(this).index(children[i]);
 
-				//only one can use
-				function reset() {
-					for (var i = 1; i <= max_item; i++) {
-						$("#" + i).removeClass('rating nomal');
-					}
-				}
+            for (var j = 0; j <= current; j++) {
+                $(children[j]).removeClass('nomal rating').addClass('rating');
+            }
+            for (var j = current + 1; j < length; j++) {
+                $(children[j]).removeClass('nomal rating').addClass('nomal');
+            }
 
-				$('.ratenode').bind('mouseover', function(event) {
-					reset();
-					$.rating.currentRating = parseInt(event.currentTarget.id);
-					for (var i = 1; i <= $.rating.currentRating; i++) {
-						$("#" + i).addClass('rating');
-					}
-					for (var i = $.rating.currentRating + 1; i <= max_item; i++) {
-						$("#" + i).addClass('nomal');
-					}
-					if (onChange && typeof onChange === 'function') {
-						onChange($.rating.currentRating);
-					}
+            if (typeof(cb) === 'function') {
 
-				});
+                cb(current + 1);
+            }
+        });
+    }
+}
 
+$.fn.getCurrentRating = function(){
+    var length = $(this).children().length;
+    var children = $(this).children();
+    var resulut = 0;
 
-			});
-		}
-		,getCurrentRating: function() {
-			return $.rating.currentRating;
-		}
-
-	}
-
-
-})(jQuery);
+    for (var i = 0; i < length; i++) {
+        if($(children[i]).hasClass('rating')){
+            resulut +=1;
+        }else{
+            break;
+        }
+    }
+    return resulut;
+}
