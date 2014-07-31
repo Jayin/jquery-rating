@@ -3,7 +3,7 @@ $.fn.start = function(rating,cb) {
     var children = $(this).children();
     //current index ,0 base
     var current = -1;
-    console.log(rating);
+
 
     if(typeof(rating) === 'function'){
         cb = rating;
