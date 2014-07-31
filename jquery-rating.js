@@ -15,7 +15,7 @@ $.fn.start = function(rating,cb) {
     //init rating
     current = rating - 1;
     for (var j = 0; j <= current; j++) {
-        $(children[j]).removeClass('nomal rating').addClass('rating');
+        $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
     }
     for (var i = 0; i < length; i++) {
 
@@ -23,10 +23,10 @@ $.fn.start = function(rating,cb) {
             current = $(this).index(children[i]);
 
             for (var j = 0; j <= current; j++) {
-                $(children[j]).removeClass('nomal rating').addClass('rating');
+                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
             }
             for (var j = current + 1; j < length; j++) {
-                $(children[j]).removeClass('nomal rating').addClass('nomal');
+                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-nomal');
             }
 
             if (typeof(cb) === 'function') {
@@ -43,7 +43,7 @@ $.fn.getCurrentRating = function(){
     var resulut = 0;
 
     for (var i = 0; i < length; i++) {
-        if($(children[i]).hasClass('rating')){
+        if($(children[i]).hasClass('jr-rating')){
             resulut +=1;
         }else{
             break;

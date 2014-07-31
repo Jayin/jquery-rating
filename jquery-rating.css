@@ -1,8 +1,8 @@
-.ratenode{
+.jr-ratenode{
 	
 }
 
-.rating{
+.jr-rating{
    float:left;
    margin: 6px 0;
    position: relative;
@@ -18,7 +18,7 @@
    -ms-transform:     rotate(35deg);
    -o-transform:      rotate(35deg);
 }
-.rating:before{
+.jr-rating:before{
    border-bottom: 8px solid #CC6600;
    border-left: 3px solid transparent;
    border-right: 3px solid transparent;
@@ -34,7 +34,7 @@
    -ms-transform:     rotate(-35deg);
    -o-transform:      rotate(-35deg);
 }
-.rating:after{
+.jr-rating:after{
 	 position: absolute;
    display: block;
    color: red;
@@ -52,7 +52,7 @@
    content: '';
 }
 
-.nomal {
+.jr-nomal {
    float:left;
    margin: 6px 0;
    position: relative;
@@ -68,7 +68,7 @@
    -ms-transform:     rotate(35deg);
    -o-transform:      rotate(35deg);
 }
-.nomal:before {
+.jr-nomal:before {
    border-bottom: 8px solid grey;
    border-left: 3px solid transparent;
    border-right: 3px solid transparent;
@@ -85,7 +85,7 @@
    -o-transform:      rotate(-35deg);
     
 }
-.nomal:after {
+.jr-nomal:after {
    position: absolute;
    display: block;
    color: red;
