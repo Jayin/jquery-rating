@@ -11,11 +11,11 @@ see [DEMO](http://jayin.github.io/jquery-rating/demo.html)
 <!-- div group -->
     <div class="group1">
         <!-- rattings-->
-        <div   class="ratenode nomal"></div>
-        <div   class="ratenode nomal "></div>
-        <div   class="ratenode nomal "></div>
-        <div   class="ratenode nomal "></div>
-        <div   class="ratenode nomal "></div>
+        <div   class="jr-ratenode jr-nomal"></div>
+        <div   class="jr-ratenode jr-nomal "></div>
+        <div   class="jr-ratenode jr-nomal "></div>
+        <div   class="jr-ratenode jr-nomal "></div>
+        <div   class="jr-ratenode jr-nomal "></div>
     </div>
     <div >
         <p id="info" >0</p>
