@@ -1,4 +1,5 @@
-### jquery-rating
+jquery-rating
+===
 
 a simple rating plugin with pure CSS implement
 
